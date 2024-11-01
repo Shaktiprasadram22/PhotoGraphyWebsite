@@ -1,0 +1,77 @@
+/* src/components/FeaturedPhotos.css */
+.packages {
+  text-align: center;
+  margin: 20px;
+  color: #8b4513; /* Rich, warm brown text reflecting the golden hour */
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.card {
+  width: 300px; /* Fixed width for each card */
+  border: 1px solid #ffdab9; /* Soft peach border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.5); /* Soft shadow with a sunset hue */
+  background: linear-gradient(
+    to top,
+    #fff5ee,
+    #ffdab9
+  ); /* Subtle gradient from soft white to peach */
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card:hover {
+  transform: translateY(
+    -5px
+  ); /* Slightly raises the card to indicate interactivity */
+  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.75); /* Intensifies the shadow for a "lifted" effect */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h3 {
+  margin: 0;
+  color: #8b4513; /* Darker text for the title, maintaining readability */
+}
+
+.card p {
+  margin: 10px 0;
+  color: #6b8e23; /* Olive color for text to complement warm tones */
+}
+
+.price {
+  font-size: 20px;
+  color: #daa520; /* Gold color for the price to emphasize luxury and warmth */
+  font-weight: bold;
+}
+
+.book-now-btn {
+  padding: 10px 20px;
+  background-color: #ff8c00; /* Deep orange for the button, suggesting action and warmth */
+  color: white; /* White text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Spacing from price */
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover,
+.book-now-btn:focus {
+  background-color: #ff4500; /* Darker orange on hover to maintain warmth */
+  outline: none; /* Remove default outline and replace with custom if necessary for accessibility */
+}
+
+.book-now-btn:active {
+  transform: scale(0.95); /* Slight shrink effect to simulate a button press */
+}

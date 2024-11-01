@@ -1,0 +1,63 @@
+/* src/components/Footer.css */
+.footer {
+  padding: 20px;
+  background: linear-gradient(to top, #ff6347, #ffa07a); /* Sunset gradient */
+  color: white;
+  text-align: center;
+  border-top: 5px solid #ffdab9; /* Peach border for style */
+  transition: background-color 0.3s ease;
+}
+
+.footer:hover {
+  background-color: #8b4513; /* Darkens slightly on hover */
+}
+
+.footer-content {
+  margin: auto;
+  max-width: 960px; /* Centralize content */
+  display: flex;
+  flex-wrap: wrap; /* Wraps on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logout-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #8b4513; /* Deep warm brown */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #a0522d; /* Lighter on hover */
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  padding: 5px;
+}
+
+.social-links a:hover {
+  color: #fff5ee; /* Lighter color on hover */
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack content on mobile */
+  }
+
+  .social-links a {
+    margin: 5px; /* Adjust margin for smaller screens */
+  }
+}

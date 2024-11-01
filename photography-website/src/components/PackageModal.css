@@ -1,0 +1,38 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; /* Ensures the modal is on top of other content */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Delays hiding visibility */
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease; /* Smooth transition for showing the modal */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+  width: 300px;
+  text-align: center;
+  transform: translateY(
+    -50px
+  ); /* Start slightly above to create an entrance effect */
+  transition: transform 0.3s ease-out; /* Smooths the entrance motion */
+}
+
+.modal-content.show {
+  transform: translateY(0); /* Moves to the natural position when visible */
+}

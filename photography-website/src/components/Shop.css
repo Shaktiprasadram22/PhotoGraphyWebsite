@@ -1,0 +1,115 @@
+.shop {
+  padding: 20px;
+  background: linear-gradient(
+    to right,
+    #ffd194,
+    #d1913c
+  ); /* Soft gradient from light sunset orange to deeper gold */
+  min-height: 100vh;
+  color: #5d4037; /* Soft brown text color for readability */
+}
+
+h1 {
+  text-align: center;
+  color: #8c2e0b; /* Deeper shade of sunset */
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem; /* Larger font for emphasis */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.product-card {
+  background: #fffefe; /* Very soft white to complement the warm theme */
+  border: 1px solid #e0bbe4; /* Soft purple border for a subtle contrast */
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3); /* Soft shadow for depth */
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.03); /* Slight scale to raise card on hover */
+  box-shadow: 0 6px 12px rgba(139, 69, 19, 0.5); /* Deeper shadow for a lifting effect */
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0bbe4; /* Continuity with the card border */
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #f57c00; /* Warm orange for price to stand out */
+}
+
+.btn {
+  background-color: #ff8a65; /* Warm, soft peach for buttons */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #ff7043; /* Slightly deeper shade on hover */
+  transform: translateY(-2px); /* Slight raise on hover */
+}
+.cart {
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 2px solid #ff4500;
+  background-color: #f6f6f6;
+}
+
+.cart-item {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.checkout-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkout-btn:hover {
+  background-color: #45a049;
+}
+
+.btn,
+.checkout-btn {
+  transition: background-color 0.3s ease;
+}
+
+.cart h2 {
+  color: #333;
+}

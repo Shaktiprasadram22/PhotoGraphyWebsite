@@ -1,0 +1,56 @@
+/* Golden Hour Theme for Testimonials */
+.testimonials {
+  padding: 20px;
+  background-color: #fff5ee; /* Soft sunset peach background */
+  text-align: center;
+  margin: 20px auto; /* Centers the testimonials section and adds margin */
+  border-radius: 10px; /* Adds subtle roundness to the container */
+  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.4); /* Soft shadow with sunset hues */
+  max-width: 800px; /* Limits the maximum width for better readability on larger screens */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.testimonials:hover {
+  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.6); /* Enhances shadow on hover for a subtle interactive effect */
+}
+
+.testimonials h2 {
+  color: #8b4513; /* Rich, warm brown text for titles */
+  margin-bottom: 20px; /* Adds space below the title for visual separation */
+  font-size: 24px; /* Slightly larger font size for emphasis */
+}
+
+.slick-slide {
+  color: #6b8e23; /* Olive green for text, harmonizing with warm outdoor themes */
+  font-family: "Arial", sans-serif; /* Maintains Arial for clarity */
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 10px;
+  padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    #ffdab9,
+    #fff5ee
+  ); /* Gradient from light peach to softer white */
+  border-radius: 8px; /* Rounded corners for each slide */
+  box-shadow: 0 2px 4px rgba(244, 164, 96, 0.3); /* Shadow that complements the golden hour theme */
+  transition: transform 0.3s ease-in-out; /* Adds a smooth transition for scaling effect */
+}
+
+.slick-slide:hover {
+  transform: scale(
+    1.05
+  ); /* Scales up the slide on hover for a noticeable interactive effect */
+}
+
+.slick-dots li button:before {
+  color: #daa520; /* Changes the dot color to a gold, enhancing the warm theme */
+  font-size: 12px; /* Adjusts the size of the navigation dots for better visibility */
+  opacity: 0.75; /* Makes the dots slightly transparent unless active */
+  transition: opacity 0.2s ease-in-out; /* Smooth transition for dot opacity */
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1; /* Full opacity for the active dot */
+}
+    

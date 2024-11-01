@@ -1,0 +1,54 @@
+/* src/components/Navbar.css */
+.navbar {
+  background-color: #ffdab9; /* Peach background mimicking golden hour light */
+  color: #8b4513; /* Darker brown text for contrast */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  display: flex; /* Ensures that the navbar contents are flexibly laid out */
+  justify-content: center; /* Center alignment of navbar items */
+  align-items: center; /* Vertically centers the content */
+}
+
+.nav-links {
+  list-style: none; /* Removes bullet points from the list */
+  display: flex; /* Aligns links in a row */
+  justify-content: center; /* Centers the links horizontally */
+  padding: 0;
+  margin: 0; /* Removes default margin */
+}
+
+.nav-item {
+  margin: 0 15px; /* Spacing between links */
+}
+
+.nav-item a {
+  color: #8b4513; /* Darker brown text color */
+  text-decoration: none; /* Removes underline from links */
+  font-size: 18px; /* Increases font size */
+  font-weight: 500; /* Medium font weight for better readability */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for hover and focus effects */
+  padding: 8px; /* Padding for a better click area */
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+  color: #ffa07a; /* Light salmon color on hover/focus, reminiscent of softer sunlight */
+  transform: scale(1.05); /* Slightly enlarges the link on hover/focus */
+  outline: none; /* Removes the default focus outline */
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stacks the navigation items vertically on smaller screens */
+    padding: 20px; /* More padding for a touch-friendly interface */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Aligns links vertically */
+  }
+
+  .nav-item {
+    margin: 10px 0; /* Adjusts margin for vertical stacking */
+  }
+}
