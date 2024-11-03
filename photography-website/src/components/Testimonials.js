@@ -17,52 +17,52 @@ function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "John Doe",
+      name: "Shakti",
       text: "This is an excellent company! Their professionalism is on point. Highly recommend!",
     },
     {
       id: 2,
-      name: "Jane Smith",
+      name: "Ankit",
       text: "I couldn't be happier with the photos! They captured our day perfectly.",
     },
     {
       id: 3,
-      name: "Amelia Pond",
+      name: "Abhinash ",
       text: "Amazing experience. The photographer was very friendly and skilled. Great results!",
     },
     {
       id: 4,
-      name: "Ravi Patel",
+      name: "Arindam ",
       text: "Very professional and creative. Loved the unique angles and ideas for our family shoot.",
     },
     {
       id: 5,
-      name: "Emily Zhang",
+      name: "vivek ",
       text: "They made our wedding day so special! The photos were magical and more than we could have ever hoped for.",
     },
     {
       id: 6,
-      name: "Carlos Gomez",
+      name: "Abhinav ",
       text: "The team was punctual, professional, and very accommodating. Highly recommended for any event!",
     },
     {
       id: 7,
-      name: "Anika Singh",
+      name: "Yash ",
       text: "We had a great experience during our baby's first photo session. They were very patient and gentle.",
     },
     {
       id: 8,
-      name: "Lucas Kwan",
+      name: "Shivam ",
       text: "Excellent service and stunning photographs! They really know how to capture the essence of each moment.",
     },
     {
       id: 9,
-      name: "Sophie Laurent",
+      name: " Dharuv",
       text: "Top-notch quality and service. They went above and beyond to meet our expectations.",
     },
     {
       id: 10,
-      name: "Mohamed Al-Fayed",
+      name: "Monmohan ",
       text: "Their eye for detail is impeccable. Loved how they handled our corporate event from start to finish.",
     },
   ];
