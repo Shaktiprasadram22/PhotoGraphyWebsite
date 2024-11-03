@@ -14,9 +14,9 @@ function Footer({ onLogout, isAuthenticated }) {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <h3>Company Name</h3>
-        <p>1234 Street Address, City, State, 12345</p>
-        <p>Contact us: (123) 456-7890</p>
+        <h3>Maa Tarini Photography</h3>
+        <p>BBSR,ODISHA,PATIA,758021</p>
+        <p>Contact us: +91 8917583070</p>
         <div className="social-links">
           <a
             href="https://www.facebook.com"
