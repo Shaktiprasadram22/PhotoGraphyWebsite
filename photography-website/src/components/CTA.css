@@ -1,47 +1,77 @@
+/* src/components/CTA.css */
+
 .cta-container {
-  background-color: #ff6347; /* Vibrant sunset orange */
-  color: white; /* High contrast for readability */
-  padding: 40px; /* Generous padding for emphasis */
-  text-align: center; /* Central alignment for content */
-  border-radius: 8px; /* Smoothed corners for a modern look */
-  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.3); /* Soft shadow with a warm tint */
-  background: linear-gradient(
-    to top,
-    #ff6347,
-    #ffa07a
-  ); /* Gradient from deep orange to lighter salmon */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for interactive feedback */
+  background: linear-gradient(to top, #ff6347, #ffa07a);
+  color: white;
+  padding: 50px 40px; /* Increased padding for prominence */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(244, 164, 96, 0.3);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  max-width: 800px; /* Max width to keep it centered on larger screens */
+  margin: 40px auto; /* Centered on the page */
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+.cta-container:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .cta-container:hover {
-  transform: translateY(
-    -5px
-  ); /* Slight upward shift to suggest interactivity */
-  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.6); /* Enhanced shadow for a lifted effect */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(244, 164, 96, 0.6);
 }
 
 .cta-button {
-  font-size: 18px; /* Clear, legible font size */
-  padding: 10px 20px; /* Comfortable padding for clicking */
-  background-color: white; /* Stark contrast against the CTA background */
-  color: #ff6347; /* Echoes the vibrant CTA background color */
-  border: none; /* Clean design without borders */
-  border-radius: 5px; /* Consistently rounded edges */
-  cursor: pointer; /* Indicates interactiveness */
-  transition: all 0.3s ease; /* Smooth transition for hover and focus effects */
-  box-shadow: 0 2px 4px rgba(244, 164, 96, 0.5); /* Subtle shadow to elevate the button visually */
+  font-size: 18px;
+  padding: 12px 24px;
+  background-color: white;
+  color: #ff6347;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(244, 164, 96, 0.5);
+  font-weight: bold;
 }
 
 .cta-button:hover,
 .cta-button:focus {
-  background-color: #fff5f5; /* Very light pink on hover to maintain a soft, warm feel */
-  transform: scale(
-    1.05
-  ); /* Slight enlargement to provide interactive feedback */
-  outline: none; /* Removes default outline on focus for a clean look, ensure accessibility is maintained elsewhere */
+  background-color: #fff5f5;
+  transform: scale(1.07);
+  box-shadow: 0 5px 12px rgba(244, 164, 96, 0.6);
 }
 
 .cta-button:active {
-  transform: scale(0.95); /* Compresses button to simulate pressing effect */
-  background-color: #ffafa7; /* Slightly darker pink to indicate active state */
+  transform: scale(0.95);
+  background-color: #ffafa7;
+}
+
+/* Animation for slight pulsing effect on the CTA container */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.cta-container:hover {
+  animation: pulse 1.5s infinite;
 }

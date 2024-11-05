@@ -1,64 +1,98 @@
+/* src/components/FAQ.css */
+
 .faq-section {
-  margin: 20px auto; /* Centered on page with automatic horizontal margins */
-  padding: 20px;
-  background-color: #fdd9b5; /* Soft peach background for a warm feel */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(153, 102, 51, 0.2); /* Soft brown shadow for depth */
-  width: 80%; /* Responsive width */
-  max-width: 800px; /* Maximum width to ensure it doesn’t stretch too far on larger screens */
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #fdd9b5;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(153, 102, 51, 0.2);
+  width: 85%;
+  max-width: 800px;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-section:hover {
+  box-shadow: 0 8px 15px rgba(153, 102, 51, 0.3); /* Enhanced shadow on hover */
 }
 
 .faq-question {
   width: 100%;
   text-align: left;
-  padding: 12px;
-  background: linear-gradient(
-    145deg,
-    #ffe4c4,
-    #ffdab9
-  ); /* Gradient effect for button */
+  padding: 14px;
+  background: linear-gradient(145deg, #ffe4c4, #ffdab9);
   border: none;
   font-size: 18px;
   font-weight: bold;
-  color: #8b4513; /* Dark brown text for better contrast */
+  color: #8b4513;
   cursor: pointer;
-  border-radius: 5px; /* Rounded corners for modern feel */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for interaction */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  position: relative;
 }
 
 .faq-question:hover,
 .faq-question:focus {
-  background-color: #ffdead; /* Lighter shade on hover for interactivity */
-  outline: none; /* Removes outline while ensuring focus is visible, customize as needed for accessibility */
+  background-color: #ffdead;
+  outline: none;
 }
 
 .faq-question.active {
-  color: #ff6347; /* Changes text color to indicate active state */
-  transform: translateY(-2px); /* Slight lift effect to indicate selection */
+  color: #ff6347;
+  transform: translateY(-2px);
+}
+
+.faq-question.active::after {
+  content: "▲"; /* Up arrow to indicate expanded state */
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+}
+
+.faq-question:not(.active)::after {
+  content: "▼"; /* Down arrow to indicate collapsed state */
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
 }
 
 .faq-answer {
   margin-top: 5px;
-  padding: 10px;
-  background-color: #fffaf0; /* Very light yellow background for the answer */
+  padding: 15px;
+  background-color: #fffaf0;
   border-radius: 4px;
-  display: none;
-  color: #6b8e23; /* Olive green text color for natural, earthy feel */
-  text-align: left; /* Ensures text is aligned to the left */
-  border-left: 5px solid #ff8c00; /* Dark orange border left for emphasis */
-  transition: max-height 0.5s ease-in-out, opacity 0.3s ease; /* Smooth transition for expanding and collapsing */
-  overflow: hidden; /* Keeps content from spilling out during transitions */
-  max-height: 0; /* Start with no height for a collapsed look */
-  opacity: 0; /* Start transparent and fade in */
+  color: #6b8e23;
+  text-align: left;
+  border-left: 5px solid #ff8c00;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform-origin: top;
+  transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.5s ease;
 }
 
 .faq-answer.open {
-  display: block; /* Shows the answer when the question is active */
-  max-height: 500px; /* Sufficient height to cover content dynamically */
-  opacity: 1; /* Fully visible when open */
+  max-height: 800px; /* Sufficient max-height for most answers */
+  opacity: 1;
+  transform: scaleY(1); /* Expands vertically with a smooth effect */
 }
 
 .faq-item {
   margin-bottom: 20px;
-  border-bottom: 1px solid #ffe4b5; /* Light border for subtle separation between questions */
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ffe4b5;
+}
+
+/* Bounce animation for active question */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.faq-question.active {
+  animation: bounce 0.4s ease;
 }

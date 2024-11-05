@@ -1,13 +1,18 @@
+/* src/components/About.css */
+
 .about-section {
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px; /* Increased padding for better spacing */
   background-color: #fff5ee;
   color: #6b8e23;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
+  border-radius: 8px; /* Softened edges */
 }
 
 .about-section:hover {
-  background-color: #ffe4b5; /* Soft transition to a lighter shade on hover */
+  background-color: #ffe4b5;
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Soft shadow on hover */
 }
 
 .about-content {
@@ -15,11 +20,12 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .about-content:hover {
-  transform: scale(1.05); /* Slightly enlarges the content on hover */
+  transform: scale(1.07); /* Slight enlargement for emphasis */
+  opacity: 0.95;
 }
 
 .about-image {
@@ -27,12 +33,12 @@
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: box-shadow 0.5s ease, transform 0.6s ease;
 }
 
 .about-image:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
-  transform: rotate(360deg); /* Adds a rotation effect on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  transform: rotate(360deg) scale(1.05); /* Rotates and slightly enlarges on hover */
 }
 
 @media (min-width: 768px) {
@@ -61,27 +67,70 @@
 .about-text {
   flex: 2;
   padding: 10px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #556b2f; /* Subtle, earthy tone for readability */
+  opacity: 0.9;
 }
 
 .testimonial-quote {
   font-style: italic;
   color: #ff6347;
   margin-top: 20px;
+  transition: color 0.4s ease;
+}
+
+.testimonial-quote:hover {
+  color: #d94d3a; /* Slight color shift on hover */
 }
 
 button {
   background-color: #ff8c00;
   color: white;
   border: none;
-  padding: 10px 15px;
-  margin-top: 10px;
+  padding: 12px 20px;
+  margin-top: 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Initial shadow for depth */
 }
 
 button:hover {
   background-color: #ff4500;
-  transform: translateY(-3px); /* Moves the button up slightly on hover */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for a lifted effect */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow for hover */
+}
+
+button:active {
+  transform: translateY(1px); /* Pressed button effect */
+}
+
+/* Animations for hover interactions */
+
+.about-image:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 2px solid rgba(255, 99, 71, 0.6);
+  border-radius: 50%;
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
 }

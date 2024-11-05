@@ -1,63 +1,83 @@
 /* src/components/Footer.css */
+
 .footer {
-  padding: 20px;
-  background: linear-gradient(to top, #ff6347, #ffa07a); /* Sunset gradient */
+  padding: 25px;
+  background: linear-gradient(to top, #ff6347, #ffa07a);
   color: white;
   text-align: center;
-  border-top: 5px solid #ffdab9; /* Peach border for style */
-  transition: background-color 0.3s ease;
+  border-top: 5px solid #ffdab9;
+  transition: background 0.4s ease;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow for depth */
 }
 
 .footer:hover {
-  background-color: #8b4513; /* Darkens slightly on hover */
+  background: linear-gradient(
+    to top,
+    #8b4513,
+    #a0522d
+  ); /* Darkens on hover with gradient */
 }
 
 .footer-content {
   margin: auto;
-  max-width: 960px; /* Centralize content */
+  max-width: 960px;
   display: flex;
-  flex-wrap: wrap; /* Wraps on smaller screens */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  gap: 10px; /* Adds spacing between items */
 }
 
 .logout-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #8b4513; /* Deep warm brown */
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #8b4513;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for hover */
 }
 
 .logout-button:hover {
-  background-color: #a0522d; /* Lighter on hover */
+  background-color: #a0522d;
+  transform: scale(1.05); /* Slight enlargement for interactive feedback */
+}
+
+.logout-button:active {
+  transform: scale(0.95); /* Press effect */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space out social icons */
+  margin-top: 10px;
 }
 
 .social-links a {
-  margin: 0 10px;
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  padding: 5px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and scale transition */
+  font-size: 1.2em; /* Larger font for more visibility */
 }
 
 .social-links a:hover {
-  color: #fff5ee; /* Lighter color on hover */
-  text-decoration: underline;
+  color: #fff5ee;
+  transform: translateY(-3px); /* Moves link slightly up on hover */
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.4); /* Adds a glow effect */
 }
 
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column; /* Stack content on mobile */
+    flex-direction: column;
   }
 
   .social-links a {
-    margin: 5px; /* Adjust margin for smaller screens */
+    margin: 5px;
+    font-size: 1.1em; /* Slightly smaller on mobile */
   }
 }

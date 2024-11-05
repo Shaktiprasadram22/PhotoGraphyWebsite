@@ -1,38 +1,55 @@
+/* src/components/Modal.css */
+
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1050; /* Ensures the modal is on top of other content */
+  z-index: 1050;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Delays hiding visibility */
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
 }
 
 .modal-backdrop.show {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s ease; /* Smooth transition for showing the modal */
+  transition: opacity 0.3s ease, visibility 0s; /* No delay when showing */
 }
 
 .modal-content {
   background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
-  width: 300px;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  width: 320px;
+  max-width: 90%; /* Responsive width */
   text-align: center;
-  transform: translateY(
-    -50px
-  ); /* Start slightly above to create an entrance effect */
-  transition: transform 0.3s ease-out; /* Smooths the entrance motion */
+  transform: translateY(-50px) scale(0.95); /* Starting state: slightly above with slight shrink */
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth entrance */
 }
 
 .modal-content.show {
-  transform: translateY(0); /* Moves to the natural position when visible */
+  transform: translateY(0) scale(1); /* Brings modal to center with slight zoom */
+  opacity: 1;
+}
+
+/* Add fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-backdrop.show {
+  animation: fade-in 0.3s ease forwards; /* Backdrop fades in smoothly */
 }

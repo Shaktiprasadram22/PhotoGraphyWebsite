@@ -1,36 +1,33 @@
 /* src/components/FeaturedPhotos.css */
+
 .packages {
   text-align: center;
-  margin: 20px;
-  color: #8b4513; /* Rich, warm brown text reflecting the golden hour */
+  margin: 30px;
+  color: #8b4513;
+  font-size: 1.4em; /* Slightly larger text for emphasis */
 }
 
 .cards {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Space between cards */
-  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
-  width: 300px; /* Fixed width for each card */
-  border: 1px solid #ffdab9; /* Soft peach border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding inside the card */
-  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.5); /* Soft shadow with a sunset hue */
-  background: linear-gradient(
-    to top,
-    #fff5ee,
-    #ffdab9
-  ); /* Subtle gradient from soft white to peach */
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  width: 300px;
+  border: 1px solid #ffdab9;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.4);
+  background: linear-gradient(to top, #fff5ee, #ffdab9);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, perspective 800px;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(
-    -5px
-  ); /* Slightly raises the card to indicate interactivity */
-  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.75); /* Intensifies the shadow for a "lifted" effect */
+  transform: translateY(-5px) scale(1.03) rotate(1deg); /* Raised, slight scale and tilt on hover */
+  box-shadow: 0 10px 20px rgba(244, 164, 96, 0.6); /* Enhanced shadow for a more pronounced lift */
 }
 
 .card-content {
@@ -40,38 +37,64 @@
 }
 
 .card h3 {
-  margin: 0;
-  color: #8b4513; /* Darker text for the title, maintaining readability */
+  margin: 10px 0;
+  color: #8b4513;
+  font-size: 1.5em; /* Larger title font for prominence */
 }
 
 .card p {
-  margin: 10px 0;
-  color: #6b8e23; /* Olive color for text to complement warm tones */
+  margin: 12px 0;
+  color: #6b8e23;
+  font-size: 1em;
 }
 
 .price {
-  font-size: 20px;
-  color: #daa520; /* Gold color for the price to emphasize luxury and warmth */
+  font-size: 22px;
+  color: #daa520;
   font-weight: bold;
+  margin: 10px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Slight shadow for a luxurious touch */
 }
 
 .book-now-btn {
-  padding: 10px 20px;
-  background-color: #ff8c00; /* Deep orange for the button, suggesting action and warmth */
-  color: white; /* White text for contrast */
+  padding: 12px 25px;
+  background-color: #ff8c00;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px; /* Spacing from price */
-  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease; /* Added transform and shadow transitions */
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.4); /* Initial shadow for depth */
 }
 
 .book-now-btn:hover,
 .book-now-btn:focus {
-  background-color: #ff4500; /* Darker orange on hover to maintain warmth */
-  outline: none; /* Remove default outline and replace with custom if necessary for accessibility */
+  background-color: #ff4500;
+  transform: scale(1.05); /* Slightly enlarged on hover for emphasis */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Additional shadow for a lifted feel */
+  outline: none;
 }
 
 .book-now-btn:active {
-  transform: scale(0.95); /* Slight shrink effect to simulate a button press */
+  transform: scale(0.95);
+  background-color: #ff6347; /* Slightly different shade on active for feedback */
+}
+
+/* Animation for card entrance */
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards .card {
+  animation: card-fade-in 0.8s ease forwards;
 }

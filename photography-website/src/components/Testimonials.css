@@ -1,56 +1,74 @@
 /* Golden Hour Theme for Testimonials */
+
 .testimonials {
-  padding: 20px;
-  background-color: #fff5ee; /* Soft sunset peach background */
+  padding: 30px 20px;
+  background-color: #fff5ee;
   text-align: center;
-  margin: 20px auto; /* Centers the testimonials section and adds margin */
-  border-radius: 10px; /* Adds subtle roundness to the container */
-  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.4); /* Soft shadow with sunset hues */
-  max-width: 800px; /* Limits the maximum width for better readability on larger screens */
-  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(244, 164, 96, 0.4);
+  max-width: 800px;
+  transition: box-shadow 0.4s ease-in-out, transform 0.3s ease-in-out; /* Added transform for interactive scaling */
 }
 
 .testimonials:hover {
-  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.6); /* Enhances shadow on hover for a subtle interactive effect */
+  box-shadow: 0 8px 16px rgba(244, 164, 96, 0.6);
+  transform: translateY(-5px); /* Slight lift on hover */
 }
 
 .testimonials h2 {
-  color: #8b4513; /* Rich, warm brown text for titles */
-  margin-bottom: 20px; /* Adds space below the title for visual separation */
-  font-size: 24px; /* Slightly larger font size for emphasis */
+  color: #8b4513;
+  margin-bottom: 25px;
+  font-size: 28px; /* Slightly larger for prominence */
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Adds depth to the title */
 }
 
 .slick-slide {
-  color: #6b8e23; /* Olive green for text, harmonizing with warm outdoor themes */
-  font-family: "Arial", sans-serif; /* Maintains Arial for clarity */
+  color: #6b8e23;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  margin: 0 10px;
-  padding: 20px;
-  background: linear-gradient(
-    to bottom,
-    #ffdab9,
-    #fff5ee
-  ); /* Gradient from light peach to softer white */
-  border-radius: 8px; /* Rounded corners for each slide */
-  box-shadow: 0 2px 4px rgba(244, 164, 96, 0.3); /* Shadow that complements the golden hour theme */
-  transition: transform 0.3s ease-in-out; /* Adds a smooth transition for scaling effect */
+  line-height: 1.6;
+  margin: 0 15px;
+  padding: 25px;
+  background: linear-gradient(to bottom, #ffdab9, #fff5ee);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(244, 164, 96, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth scaling and shadow on hover */
 }
 
 .slick-slide:hover {
-  transform: scale(
-    1.05
-  ); /* Scales up the slide on hover for a noticeable interactive effect */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.4); /* Enhanced shadow for lift effect */
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .slick-dots li button:before {
-  color: #daa520; /* Changes the dot color to a gold, enhancing the warm theme */
-  font-size: 12px; /* Adjusts the size of the navigation dots for better visibility */
-  opacity: 0.75; /* Makes the dots slightly transparent unless active */
-  transition: opacity 0.2s ease-in-out; /* Smooth transition for dot opacity */
+  color: #daa520;
+  font-size: 14px;
+  opacity: 0.6; /* Reduced opacity for inactive dots */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease; /* Added scale for active effect */
 }
 
 .slick-dots li.slick-active button:before {
-  opacity: 1; /* Full opacity for the active dot */
+  opacity: 1;
+  transform: scale(1.3); /* Larger, highlighted dot for active state */
 }
-    
+
+.slick-prev,
+.slick-next {
+  font-size: 20px;
+  color: #8b4513; /* Matches the warm brown theme */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #daa520; /* Golden color on hover */
+  transform: scale(1.1); /* Slight enlargement for hover feedback */
+}

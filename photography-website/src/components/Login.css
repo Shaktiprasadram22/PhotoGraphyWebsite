@@ -4,26 +4,66 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #ffddc1,
-    #ffc288
-  ); /* Warm gradient background */
+  background: linear-gradient(135deg, #ffddc1, #ffc288);
+  animation: gradient-shift 10s ease-in-out infinite alternate; /* Background animation */
+}
+
+@keyframes gradient-shift {
+  0% {
+    background: linear-gradient(135deg, #ffddc1, #ffc288);
+  }
+  100% {
+    background: linear-gradient(135deg, #ffc288, #ffddc1);
+  }
 }
 
 .login-form {
-  width: 300px;
-  padding: 20px;
-  background: rgba(255, 239, 210, 0.95); /* Soft golden overlay */
-  box-shadow: 0 4px 20px rgba(255, 180, 90, 0.4); /* Warm shadow effect */
-  border-radius: 8px;
+  width: 320px;
+  padding: 25px;
+  background: rgba(255, 239, 210, 0.95);
+  box-shadow: 0 6px 25px rgba(255, 180, 90, 0.4);
+  border-radius: 10px;
+  transform: scale(0.9);
+  animation: form-fade-in 0.8s ease forwards; /* Fade-in animation */
+}
+
+@keyframes form-fade-in {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .login-form h2 {
   margin-bottom: 20px;
   text-align: center;
   font-size: 24px;
-  color: #b85c38; /* Rich warm tone for heading */
+  color: #b85c38;
+  font-weight: bold;
+  position: relative;
+}
+
+.login-form h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background-color: #b85c38;
+  display: block;
+  margin: 5px auto 0;
+  animation: underline-grow 0.5s ease forwards;
+}
+
+@keyframes underline-grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50px;
+  }
 }
 
 .form-group {
@@ -34,30 +74,50 @@
   display: block;
   font-size: 14px;
   margin-bottom: 5px;
-  color: #8c4a1c; /* Darker warm tone for labels */
+  color: #8c4a1c;
+  transition: color 0.3s;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #ffa552; /* Light orange border */
+  border: 1px solid #ffa552;
   border-radius: 4px;
-  background-color: #fff5eb; /* Very light warm tone for input background */
+  background-color: #fff5eb;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #ff8a5b;
+  box-shadow: 0 0 8px rgba(255, 138, 91, 0.3); /* Glowing effect on focus */
+  outline: none;
 }
 
 .login-button {
   width: 100%;
-  padding: 10px;
-  background-color: #ff8a5b; /* Sunset orange for button */
+  padding: 12px;
+  background-color: #ff8a5b;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
   font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 138, 91, 0.3); /* Subtle shadow effect */
 }
 
 .login-button:hover {
-  background-color: #ff7043; /* Slightly darker on hover */
+  background-color: #ff7043;
+  transform: translateY(-2px); /* Button lifts on hover */
+  box-shadow: 0 6px 18px rgba(255, 112, 67, 0.4); /* Intensified shadow on hover */
+}
+
+.login-button:active {
+  transform: translateY(1px); /* Pressed effect */
+}
+
+/* Add animations for subtle hover effects on labels */
+.form-group input:hover + label {
+  color: #b85c38;
 }

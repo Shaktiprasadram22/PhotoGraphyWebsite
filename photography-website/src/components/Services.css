@@ -1,94 +1,112 @@
-/* Services.css - Golden Hour Theme */
+/* src/components/Services.css - Golden Hour Theme */
+
 .services-section {
-  background-color: #fff8e7; /* A light, warm beige background */
-  padding: 40px;
+  background-color: #fff8e7;
+  padding: 50px 20px;
   text-align: center;
-  color: #8b572a; /* Rich golden brown text color */
+  color: #8b572a;
+  transition: background-color 0.3s ease-in-out; /* Subtle background transition */
 }
 
 .services-section h2 {
-  color: #daa520; /* Gold color for headings */
-  margin-bottom: 20px;
-  font-size: 28px; /* Slightly larger to make headings stand out */
+  color: #daa520;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Adds depth to heading */
 }
 
 .services-section ul {
   list-style: none;
   padding: 0;
-  margin: 0; /* Ensures the list has no default margin for better spacing control */
+  margin: 0;
 }
 
 .services-section li {
   margin-bottom: 30px;
-  background: linear-gradient(
-    to right,
-    #ffebcd,
-    #f7e1a0
-  ); /* Subtle gradient from cream to light gold */
-  padding: 20px;
-  border-radius: 10px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform for hover effects */
+  background: linear-gradient(to right, #ffebcd, #f7e1a0);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: 15px auto; /* Centered with additional spacing */
 }
 
 .services-section li:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a floating effect */
+  transform: translateY(-7px); /* Enhanced lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .services-section h3 {
-  color: #ffd700; /* Bright gold for subheadings */
-  font-size: 22px;
+  color: #ffd700;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .services-section p {
-  color: #8b572a; /* Maintaining the golden brown scheme for text */
+  color: #8b572a;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 600px;
-  margin: 0 auto 20px; /* Centralizes text and adds space below */
+  margin: 0 auto 20px;
 }
 
-/* Hover effect for interactive elements */
 .service-header {
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease-in-out;
+  justify-content: center;
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .service-header:hover {
-  background-color: #f0ead6; /* Light golden when hovered for a subtle interactive effect */
+  background-color: #f0ead6;
+  transform: scale(1.02); /* Slight enlargement on hover */
 }
 
 .service-icon {
   width: 50px;
-  height: auto; /* Ensures the icon maintains its aspect ratio */
-  margin-right: 20px;
+  height: auto;
+  margin-right: 15px;
+  transition: transform 0.3s ease; /* Smooth icon animation */
+}
+
+.service-header:hover .service-icon {
+  transform: rotate(10deg); /* Subtle rotation on hover */
 }
 
 .service-more-info {
-  background-color: #faf0e6; /* Light cream background for expanded info */
+  background-color: #faf0e6;
   padding: 15px;
-  border-top: 2px solid #ffd700; /* Golden line to separate expanded content */
-  overflow: hidden; /* Ensures no content spills outside the container */
-  transition: max-height 0.3s ease-in-out; /* Smooth transition for expanding and collapsing */
+  border-top: 2px solid #ffd700;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out; /* Smooth expand/collapse effect */
+}
+
+.service-more-info.show {
+  max-height: 300px; /* Adjust based on content size */
+  padding: 15px 15px 25px; /* Expands padding when open */
 }
 
 @media (min-width: 768px) {
   .services-section {
-    text-align: left; /* Aligns text to the left on larger screens */
+    text-align: left;
   }
 
   .services-section ul {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .services-section li {
     flex: 1;
-    margin: 10px; /* Adds margin for better separation between items */
-    max-width: 300px; /* Ensures each service card doesn't grow too large */
+    margin: 15px;
+    max-width: 300px;
   }
 }

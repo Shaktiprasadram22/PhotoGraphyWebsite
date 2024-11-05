@@ -1,65 +1,100 @@
+/* src/components/Contact.css */
+
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Increased gap for better visual separation */
-  padding: 30px; /* Increased padding for a more spacious layout */
-  background: linear-gradient(
-    to bottom,
-    #fff5ee 0%,
-    /* Starting with a soft white at the top */ #ffdab9 100%
-      /* Gradually transitioning to a warm peach at the bottom */
-  );
-  border-radius: 10px; /* Slightly larger radius for softer edges */
-  box-shadow: 0 6px 12px rgba(244, 164, 96, 0.3); /* Larger and softer shadow for added depth */
-  margin: 40px auto; /* More margin for better spacing from other elements */
+  gap: 20px; /* Slightly increased gap for better separation */
+  padding: 40px;
+  background: linear-gradient(to bottom, #fff5ee 0%, #ffdab9 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(244, 164, 96, 0.3);
+  margin: 50px auto;
   text-align: center;
-  max-width: 600px; /* Maintaining the maximum width for form size control */
-  transition: box-shadow 0.3s ease-in-out;
+  max-width: 600px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contact-form:hover {
+  box-shadow: 0 12px 20px rgba(244, 164, 96, 0.4); /* Increased shadow on hover for depth */
+  transform: translateY(-5px); /* Gentle lift on hover */
 }
 
 .contact-form input[type="text"],
 .contact-form textarea,
 .contact-form input[type="file"] {
-  padding: 12px; /* Slightly thicker padding for improved user experience */
-  margin: 8px 0; /* Adjusted margin for better vertical spacing */
-  border-radius: 8px; /* Increased border-radius for softer input fields */
-  border: 1px solid #ffa07a; /* Softer border color closer to light salmon */
-  background: #ffffff; /* Bright white background to maintain contrast for readability */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ffa07a;
+  background: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input[type="text"]:focus,
 .contact-form textarea:focus,
 .contact-form input[type="file"]:focus {
-  border-color: #ff4500; /* Focus color to draw attention to the active field */
-  outline: none; /* Removing default focus outline */
+  border-color: #ff4500;
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.2); /* Soft glow on focus */
+  outline: none;
 }
 
 .contact-form .file-input-label {
-  margin-top: 15px; /* Increased top margin for better label separation */
+  margin-top: 15px;
   font-weight: bold;
-  color: #8b4513; /* Maintaining the warm brown tone for labels */
+  color: #8b4513;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.contact-form .file-input-label:hover {
+  color: #a0522d; /* Slightly darker color on hover */
 }
 
 .contact-form button {
-  padding: 12px 24px; /* More generous padding for a larger clickable area */
-  background-color: #ff8c00; /* Vibrant orange for a striking call-to-action */
+  padding: 14px 28px;
+  background-color: #ff8c00;
   color: white;
   border: none;
-  border-radius: 8px; /* Softened edges on the button */
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s ease-in-out; /* Adding transform to the transition for a dynamic hover effect */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .contact-form button:hover {
-  background-color: #ff4500; /* Darker orange on hover for a pleasing visual effect */
-  transform: scale(1.05); /* Slight enlargement on hover to provide feedback */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifted effect */
+  background-color: #ff4500;
+  transform: scale(1.07); /* Slight enlargement on hover */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
+}
+
+.contact-form button:active {
+  transform: scale(0.98); /* Pressed button effect */
+}
+
+/* Subtle animation for input fields on focus */
+@keyframes pulse-focus {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form textarea:focus {
+  animation: pulse-focus 0.6s ease-in-out; /* Subtle pulsing effect on focus */
 }
 
 @media (max-width: 767px) {
   .contact-form {
-    padding: 20px; /* Reduced padding for smaller screens */
-    margin: 20px; /* Reduced margin to better fit smaller screens */
+    padding: 25px;
+    margin: 20px;
+  }
+
+  .contact-form button {
+    padding: 12px 20px; /* Reduced button padding for mobile */
   }
 }
