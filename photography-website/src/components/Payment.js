@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Payment.css"; // Ensure your CSS is linked
+import "./Payment.css";
 
 function Payment() {
   const [paymentData, setPaymentData] = useState({
@@ -7,12 +7,28 @@ function Payment() {
     expiryDate: "",
     cvv: "",
     upiId: "",
+    name: "",
     useUpi: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
+
+    // Handle specific input formats
+    if (name === "cardNumber") {
+      if (!/^\d*$/.test(value) || value.length > 16) return; // Allow only digits, max 16
+    }
+    if (name === "cvv") {
+      if (!/^\d*$/.test(value) || value.length > 3) return; // Allow only digits, max 3
+    }
+    if (name === "expiryDate") {
+      if (!/^\d{0,2}\/?\d{0,2}$/.test(value)) return; // Allow MM/YY format
+    }
+    if (name === "name") {
+      if (!/^[a-zA-Z\s]*$/.test(value)) return; // Allow only alphabetic characters and spaces
+    }
+
     setPaymentData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -21,8 +37,9 @@ function Payment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Additional validation (if needed) before submission
     console.log(paymentData);
-    setIsSubmitted(true); // Set the submitted state to true to trigger the transition
+    setIsSubmitted(true);
   };
 
   if (isSubmitted) {
@@ -47,6 +64,8 @@ function Payment() {
                 name="cardNumber"
                 value={paymentData.cardNumber}
                 onChange={handleChange}
+                maxLength="16"
+                placeholder="1234 5678 9123 4567"
                 required
               />
             </div>
@@ -57,6 +76,7 @@ function Payment() {
                 name="expiryDate"
                 value={paymentData.expiryDate}
                 onChange={handleChange}
+                placeholder="MM/YY"
                 required
               />
             </div>
@@ -67,6 +87,19 @@ function Payment() {
                 name="cvv"
                 value={paymentData.cvv}
                 onChange={handleChange}
+                maxLength="3"
+                placeholder="123"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Cardholder Name</label>
+              <input
+                type="text"
+                name="name"
+                value={paymentData.name}
+                onChange={handleChange}
+                placeholder="John Doe"
                 required
               />
             </div>
@@ -91,6 +124,7 @@ function Payment() {
               name="upiId"
               value={paymentData.upiId}
               onChange={handleChange}
+              placeholder="example@upi"
               required
             />
           </div>
