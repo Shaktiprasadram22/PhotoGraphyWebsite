@@ -1,4 +1,3 @@
-// src/components/Shop.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Shop.css";
@@ -11,7 +10,7 @@ const products = [
       "High-resolution, full-frame DSLR camera for professional photography.",
     image:
       "https://images.unsplash.com/photo-1586079892339-bc66555db4f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$2,499",
+    price: "₹2,499",
   },
   {
     id: 2,
@@ -19,7 +18,7 @@ const products = [
     description: "A versatile lens suitable for any type of photography.",
     image:
       "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$899",
+    price: "₹899",
   },
   {
     id: 3,
@@ -27,7 +26,7 @@ const products = [
     description: "A sturdy and reliable tripod for stable shooting.",
     image:
       "https://images.unsplash.com/photo-1534081333815-ae5019106622?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$299",
+    price: "₹299",
   },
   {
     id: 4,
@@ -35,7 +34,7 @@ const products = [
     description: "Durable and spacious camera bag for all your gear.",
     image:
       "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$119",
+    price: "₹119",
   },
   {
     id: 5,
@@ -43,7 +42,7 @@ const products = [
     description: "High-speed memory card with 128GB of storage.",
     image:
       "https://images.unsplash.com/photo-1584714268709-c3dd9c92b378?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$59",
+    price: "₹59",
   },
   {
     id: 6,
@@ -51,7 +50,7 @@ const products = [
     description: "External flash kit for enhanced lighting in photography.",
     image:
       "https://images.unsplash.com/photo-1579356343602-c9d4453188a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$229",
+    price: "₹229",
   },
   {
     id: 7,
@@ -59,7 +58,7 @@ const products = [
     description: "Set of quality reflectors for managing light in your shots.",
     image:
       "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$84",
+    price: "₹84",
   },
   {
     id: 8,
@@ -67,7 +66,7 @@ const products = [
     description: "Adjustable light stand for versatile studio setups.",
     image:
       "https://images.unsplash.com/photo-1518241353330-0f7941aa98a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$95",
+    price: "₹95",
   },
   {
     id: 9,
@@ -75,7 +74,7 @@ const products = [
     description: "Capture distant subjects with sharp precision.",
     image:
       "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$1,350",
+    price: "₹1,350",
   },
   {
     id: 10,
@@ -84,7 +83,7 @@ const products = [
       "Wide-angle lens ideal for landscapes and architectural shots.",
     image:
       "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$1,250",
+    price: "₹1,250",
   },
   {
     id: 11,
@@ -92,7 +91,7 @@ const products = [
     description: "Professional filter set for creative effects in photography.",
     image:
       "https://images.unsplash.com/photo-1601758003122-f3b9e8167ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$199",
+    price: "₹199",
   },
   {
     id: 12,
@@ -100,7 +99,7 @@ const products = [
     description: "Underwater housing for shooting up to 40 meters deep.",
     image:
       "https://images.unsplash.com/photo-1506729623306-b5a934d88b53?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-    price: "$1,099",
+    price: "₹1,099",
   },
 ];
 
@@ -140,8 +139,6 @@ function Shop() {
 
   return (
     <div id="shop" className="shop">
-      {" "}
-      {/* Added id="shop" here */}
       <h1>Welcome to Our Online Shop</h1>
       <p>Explore our collection of photography-related products!</p>
       <div className="product-grid">

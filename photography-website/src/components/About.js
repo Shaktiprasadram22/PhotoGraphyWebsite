@@ -7,21 +7,17 @@ function About() {
       <h2 style={{ textAlign: "right", paddingRight: "30%" }}>About Me</h2>
 
       <div className="about-layout">
-        <div className="about-image-container">
-          <img
-            src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="Professional Portrait"
-            className="about-image"
-          />
-        </div>
+        <div className="about-image-container"></div>
         <div className="about-text">
           <p>
-            Hello! I’m Billie, a <strong>professional photographer</strong>{" "}
-            based in BBSR. I specialize in <em>wedding And cinematic</em>,
-            capturing everything from 1 subjects to more subjects. With over 10
-            of experience, my work has been recognized with Awards/Recognition,
-            reflecting my commitment to capturing breathtaking moments.
+            Hello! I’m Sarthak, a <strong>small photographer</strong> from
+            Odisha. I specialize in{" "}
+            <em>cinematic shots and drone photography</em>, capturing stunning
+            visuals with precision and creativity. With experience in cinematic
+            and aerial shots, I am passionate about turning moments into lasting
+            memories.
           </p>
+
           <button
             onClick={() => {
               /* function to show more details */

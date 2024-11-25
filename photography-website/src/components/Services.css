@@ -1,4 +1,4 @@
-/* src/components/Services.css - Golden Hour Theme */
+
 
 .services-section {
   background-color: #fff8e7;
@@ -37,11 +37,6 @@
   text-align: center;
 }
 
-.services-section li:hover {
-  transform: translateY(-7px); /* Enhanced lift on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-}
-
 .services-section h3 {
   color: #ffd700;
   font-size: 22px;
@@ -64,23 +59,13 @@
   padding: 15px;
   background-color: transparent;
   border-radius: 10px;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-}
-
-.service-header:hover {
-  background-color: #f0ead6;
-  transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 .service-icon {
   width: 60px;
   height: auto;
   margin-right: 10px;
-  transition: transform 0.3s ease; /* Smooth icon animation */
-}
-
-.service-header:hover .service-icon {
-  transform: rotate(10deg); /* Subtle rotation on hover */
+  /* Smooth icon animation */
 }
 
 .service-more-info {
@@ -89,7 +74,6 @@
   border-top: 2px solid #ffd700;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out; /* Smooth expand/collapse effect */
 }
 
 .service-more-info.show {
